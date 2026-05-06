@@ -178,12 +178,7 @@
               SERL is an easy to use software suite for training online reinforcement learning agents on real robots.
             </div> -->
             <div class="content has-text-justified" style="margin-left: 20px; margin-right: 20px;">
-              <strong>SERL is a ready-to-use software suite for robotic RL, 
-                featuring sample efficient off-policy algorithms, 
-                various reward specification methods, and advanced controller for popular robots. 
-                It includes example tasks such as PCB assembly, cable routing, and reset-freeobject relocation. 
-                Remarkably, it trains policies in just 25 to 50 minutes, outperforming
-                previous benchmarks with high success rates and robustness.</strong>
+              <strong>Deep reinforcement policy learning directly in physical robots remains bottlenecked by slow wall-clock training times. We present \textbf{SymmGrid}, a trajectory-level augmentation framework inspired by branched symmetries that super-scales group transformations to significantly accelerate policy learning. We model a Markov Decision Process (MDP) as a tree of state--action pairs, where at each depth, parallelized transformations produce a geometric grid structure that holds a large set of unique symmetric equivalences. These equivalences populate the replay buffer with diverse and consistent experiences. We model the state as a combination of hand-centered images and proprioception information. We show the efficacy of our approach through extensive training and evaluation on real Franka robot manipulation contact tasks. Our work learns robust policies directly on physical robots in as little as 14 minutes and, on average, in 20 minutes of wall-clock time.</strong>
             </div>
           </div>
         </div>

@@ -102,7 +102,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2401.16013"
+                  <a href="https://arxiv.org/abs/2607.26985"
                       class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="ai ai-arxiv"></i>
@@ -112,7 +112,7 @@
                 </span>
                 <!-- Video Link. -->
                 <span class="link-block">
-                  <a href="https://youtu.be/Um4CjBmHdcw" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://youtu.be/Gf_0DSDOBtM?si=fEv_feQSD7W6JDqM" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-youtube"></i>
                     </span>
@@ -121,16 +121,16 @@
                 </span>
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/rail-berkeley/serl"
+                  <a href="https://github.com/lippyRobotics/fractalserl/"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>SERL Code</span>
+                    <span>SymmGrid Code</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/rail-berkeley/serl_franka_controller"
+                  <a href="https://github.com/lippyRobotics/serl_franka_controllers"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -140,7 +140,7 @@
                 </span>
                 <!-- Docs Link. -->
                 <span class="link-block">
-                  <a href="https://rail-berkeley.github.io/serl/"
+                  <a href="https://github.com/lippyRobotics/fractalserl/blob/main/README.md"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fa fa-book"></i>
@@ -149,7 +149,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://huggingface.co/papers/2401.16013"
+                  <a href="https://huggingface.co/papers/2607.26985"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fa fa-smile"></i>
@@ -158,28 +158,25 @@
                   </a>
                 </span>
 
-                <!-- Uncomment after publication
                 <span class="link-block">
-                  <a href="https://discord.gg/G4xPJEhwuC" 
+                  <a href="https://lipscomb-robotics.notion.site/" 
                      class="external-link button is-normal is-rounded is-dark" 
                      target="_blank" rel="noopener noreferrer">
                     <span class="icon">
                       <i class="fab fa-discord"></i>
                     </span>
-                    <span>Join our Discord</span>
+                    <span>Tutorials</span>
                   </a>
                 </span>
-              -->
+             
                 
               </div>
             </div>
-            <!-- <img src="./static/images/teaser.png" alt="Teaser Image"> -->
-            <!-- <div class="content" style="font-weight: bold; font-size: larger;">
-              SERL is an easy to use software suite for training online reinforcement learning agents on real robots.
-            </div> -->
+            <br>
             <div class="content has-text-justified" style="margin-left: 20px; margin-right: 20px;">
-              <strong>Deep reinforcement policy learning directly in physical robots remains bottlenecked by slow wall-clock training times. We present SymmGrid, a trajectory-level augmentation framework inspired by branched symmetries that super-scales group transformations to significantly accelerate policy learning. We model a Markov Decision Process (MDP) as a tree of state--action pairs, where at each depth, parallelized transformations produce a geometric grid structure that holds a large set of unique symmetric equivalences. These equivalences populate the replay buffer with diverse and consistent experiences. We model the state as a combination of hand-centered images and proprioception information. We show the efficacy of our approach through extensive training and evaluation on real Franka robot manipulation contact tasks. Our work learns robust policies directly on physical robots in as little as 14 minutes and, on average, in 20 minutes of wall-clock time.</strong>
+              <strong>Deep reinforcement policy learning directly in physical robots (on-robot learning) remains bottlenecked by slow wall-clock training times. We present SymmGrid, a trajectory-level augmentation framework inspired by parallelized symmetries that super-scales group transformations to significantly accelerate on-robot learning in both egocentric and exocentric visual setups. We model a Markov Decision Process (MDP) under a symmetry tree, in which state–action pairs have admissible parallelized invariant transformations that yield a geometric grid structure. The state is modeled with ego- or exocentric images and proprioception information. The latter require special treatment, in the form of homographies, to warp visual scenes in line with their corresponding spatial transformations. These parallelized transformations produce a large set of unique symmetric equivalences that populate the replay buffer with diverse and consistent experiences that speed up learning and improve performance. We present extensive training and evaluations performed directly on real robot manipulation contact tasks including peg-insertions, cable routing, and object relocations. Relative to SOTA, SymmGrid achieved wall-clock training convergence speedups of 1.37-2.17x, evaluation success rate improvements of 1.09x-1.27x, fastest training convergence times of 16.6, 10.9, and 79.3 minutes respectively. For trajectory wide assessments, we used normalized area under the curve (nAUC) ratios. SymmGrid achieved improvements of up to 2.59x. These results confirm that simple branch symmetries can have an outsized result due to super-scaling and bring us closer to sub-10 minute on-robot learning training in manipulation tasks suitable for arms and humanoids. The project page is available at https://symmgrid-robot.github.io/.</strong>
             </div>
+            </br>
           </div>
         </div>
       </div>
@@ -189,61 +186,43 @@
   <section class="section">
     <div class="container">
       <h2 class="title is-3" style="text-align: center;">Uncut Training Process</h2>
-      <video preload="auto" controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/pcb_videos/timelapse.mp4"
-          poster="./resources/loading-icon.gif">
-      </video>
+
+      <!-- Place videos across 3 centered columns -->
+      <div class="columns is-centered is-vcentered">
+
+        <!-- Column 1 -->
+        <div class="column is-4 has-text-centered">
+          <h3 class="title is-5">Peg Insertion</h3>
+          <video class="is-fullwidth" preload="auto" controls autoplay loop muted playsinline
+            src="./static/videos/peg/peg_insert_train.mp4"
+            poster="./resources/loading-icon.gif">
+          </video>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column is-4 has-text-centered">
+          <h3 class="title is-5">Cable Routing</h3>
+          <video class="is-fullwidth" preload="auto" controls autoplay loop muted playsinline
+            src="./static/videos/cab/cable_train.mp4"
+            poster="./resources/loading-icon.gif">
+          </video>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column is-4 has-text-centered">
+          <h3 class="title is-5">Object Relocation</h3>
+          <video class="is-fullwidth" preload="auto" controls autoplay loop muted playsinline
+            src="./static/videos/obj/obj_train.mp4"
+            poster="./resources/loading-icon.gif">
+          </video>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2 class="title is-3" style="text-align: center;">SERL Successful Deployments</h2>
-      <div id="serl-wild-carousel" class="carousel results-carousel">
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/serl_in_the_wild/pku_agi-bot_lab_tactile.mp4" poster="./resources/loading-icon.gif"></video>
-            <div class="caption">Peking Unversity Agibot Lab</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/serl_in_the_wild/tsinghua.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">Tsinghua University</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/serl_in_the_wild/eth-2.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">ETH</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/serl_in_the_wild/intrinsic.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">Intrinsic LLC</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/serl_in_the_wild/pku_agi-bot_lab_1.mp4" poster="./resources/loading-icon.gif"></video>
-            <div class="caption">Peking Unversity Agibot Lab</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/serl_in_the_wild/pku_agi-bot_lab_2.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">Peking Unversity Agibot Lab</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/serl_in_the_wild/pku_agi-bot_lab_3.mp4" poster="./resources/loading-icon.gif"></video>
-            <div class="caption">Peking Unversity Agibot Lab</div>
-          </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/serl_in_the_wild/eth.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">ETH</div>
-        </div>
-
-
-
-      </div>
-      <p class="has-text-centered mt-4">Have you used SERL successfully? Send us your videos to <a href="mailto:jianlanluo@berkeley.edu">jianlanluo@berkeley.edu</a>!</p>
+      <p class="has-text-centered mt-4">Have you used SymmGrid successfully? Send us your videos to <a href="mailto:juan.rojas@lipscomb.edu">juan.rojas@lipscomb.edu</a></p>
     </div>
   </section>
 
@@ -251,133 +230,60 @@
     <div class="container">
       <h2 class="title is-3" style="text-align: center;">Zero-shot Robustness to Perturbations and Distractors</h2>
 
-
-      <h2 class="title is-4" style="text-align: center; margin-bottom: 5px;">PCB Component Insertion</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/pcb_videos/mad_perturb_2.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent successfully inserts the PCB component as trained.</div>
+      <!-- Peg Insertion -->
+      <h2 class="title is-4" style="text-align: center; margin-bottom: 5px;">Peg Insertion</h2>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <div class="box">
+            <video class="is-fullwidth" controls autoplay loop muted playsinline
+              src="./static/videos/peg/dis_block_hole.mp4" poster="./resources/loading-icon.gif"></video>
+            <p class="caption has-text-centered mt-2">The agent successfully inserts the block after being blocked by a hand.</p>
+          </div>
         </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/pcb_videos/blind_folding_1.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent successfully inserts the PCB component after being blind-folded and the board moved.</div>
+        <div class="column is-half">
+          <div class="box">
+            <video class="is-fullwidth" controls autoplay loop muted playsinline
+              src="./static/videos/peg/dis_block_cam.mp4" poster="./resources/loading-icon.gif"></video>
+            <p class="caption has-text-centered mt-2">The agent successfully inserts the block after having its camera blocked.</p>
+          </div>
         </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/pcb_videos/distract_1.mp4"
-            poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent successfully inserts the PCB component despite multiple distractor objects on the PCB board.</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/pcb_videos/search_0.mp4"
-            poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent succeeds when the board is not fixed to the table.</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/pcb_videos/search_1.mp4"
-            poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent successfully inserts the PCB component into a the board in a different pose than training.</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/pcb_videos/perturb_search_0.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent successfully finds the holes in the board after it is moved.</div>
-        </div>
-        <!-- <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/pcb_videos/perturb_search_1.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent successfully finds the holes in the board after it is continuously moved.</div>
-        </div> -->
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/pcb_videos/mad_perturb_0.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent successfully finds the holes in the board after it is continuously moved.</div>
-        </div>
-        <!-- <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/pcb_videos/distract_2.mp4"
-            poster="./resources/loading-icon.gif"></video>
-        </div> -->
       </div>
 
-      <h2 class="title is-4" style="text-align: center; margin-bottom: 5px;">Cable Routing</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/cable_videos/regular_0.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent successfully routes the cable as trained.</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/cable_videos/rand_1.mp4"
-            poster="./resources/loading-icon.gif"></video>
-            <div class="caption">The agent generalizes to route the cable through an unseen clip pose.</div>
+      <!-- <h2 class="title is-4" style="text-align: center; margin-bottom: 5px;">Cable Routing</h2>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="box">
+            <video class="is-fullwidth" controls autoplay loop muted playsinline
+              src="./static/videos/cab/cable_train.mp4" poster="./resources/loading-icon.gif"></video>
+            <p class="caption has-text-centered mt-2">The agent successfully routes the cable as trained.</p>
           </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/cable_videos/perturb_1.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent successfully routes the cable despite continuous perturbation to the clip.</div>
         </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/cable_videos/perturb_2.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent successfully routes the cable despite continuous perturbation to the clip.</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/cable_videos/rand_0.mp4"
-            poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent generalizes to route the cable through an unseen clip pose.</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline="" src="./static/videos/cable_videos/rand_2.mp4"
-            poster="./resources/loading-icon.gif"></video>
-            <div class="caption">The agent generalizes to route the cable through an unseen clip pose.</div>
-          </div>
-      </div>
+      </div> -->
 
+      <!-- Object Relocation -->
       <h2 class="title is-4" style="text-align: center; margin-bottom: 5px;">Object Relocation</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/relocation_videos/bin_normal2.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent relocates the object as trained.</div>
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="box">
+            <video class="is-fullwidth" controls autoplay loop muted playsinline
+              src="./static/videos/obj/dis_get_from_hand.mp4" poster="./resources/loading-icon.gif"></video>
+            <p class="caption has-text-centered mt-2">The agent repeatedly attempts to take from ball from human hand before time runs out.</p>
+          </div>
         </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/relocation_videos/bin_distractor2.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent relocates the trained object despite multiple distractors in the bins.</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/relocation_videos/bin_distractor1.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent relocates the trained object despite a distractor in the scene. </div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/relocation_videos/bin_generalization1.mp4"
-            poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent generalizes to relocate a different object than trained.</div>
-        </div>
-        <div class="item">
-          <video controls="" autoplay="" loop="" muted="" playsinline=""
-            src="./static/videos/relocation_videos/bin_normal1.mp4" poster="./resources/loading-icon.gif"></video>
-          <div class="caption">The agent completes the task as trained.</div>
-        </div>
-        <!-- </div> -->
       </div>
   </section>
 
-  <!-- ARXIV SECTION: TO ADD ONE PAPER IS AVAILABLE-->
-  <!--
+  <!-- ARXIV SECTION-->
   <section class="section" id="BibTeX">
       <div class="container content">
         <h2 class="title">BibTeX</h2>
         <pre>
           <code>
-            @misc{luo2024serl,
-                title={SERL: A Software Suite for Sample-Efficient Robotic Reinforcement Learning},
-                author={Jianlan Luo and Zheyuan Hu and Charles Xu and You Liang Tan and Jacob Berg and Archit Sharma and Stefan Schaal and Chelsea Finn and Abhishek Gupta and Sergey Levine},
-                year={2024},
-                eprint={2401.16013},
+            @misc{everett2026symmGrid,
+                title={SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric–Exocentric Visual Perception.},
+                author={Gabe Everett, Brice Gunter, Ryan Vander Stelt, Cleiver Ruiz-Martinez, Blake Hull and Juan Rojas },
+                year={2026},
+                eprint={2607.26985},
                 archivePrefix={arXiv},
                 primaryClass={cs.RO}
             }
@@ -385,22 +291,20 @@
         </pre>
       </div>
   </section>
--->
+
 
 
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <!-- Uncomment after acceptance and edit arxiv link-->
-        <!-- a class="icon-link" href="https://arxiv.org/abs/">
+        <a class="icon-link" href="https://arxiv.org/abs/2607.26985">
           <i class="fas fa-file-pdf"></i>
         </a>
-        -->
-        <!-- Uncomment after acceptance-->
-        <!-- a class="icon-link" href="https://github.com/learninglogisticslab/fractalserl" class="external-link" disabled>
+        
+        <a class="icon-link" href="https://github.com/lippyrobotics/fractalserl" class="external-link" disabled>
           <i class="fab fa-github"></i>
         </a>
-      -->
+     
       </div>
       <div class="columns is-centered">
         <div class="column is-8">

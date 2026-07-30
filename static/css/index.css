@@ -127,9 +127,10 @@ body {
   margin: 0;
 }
 
-section video {
+section .column.is-4 video,
+section .box video {
   width: 100%;
-  max-width: 480px;
+  max-width: 360px;
   height: auto;
   display: block;
   margin: 0 auto;
